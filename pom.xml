@@ -188,16 +188,19 @@
             </plugin>
             <plugin>
                 <groupId>org.codehaus.cargo</groupId>
-                <artifactId>cargo-maven2-plugin</artifactId>
-                <version>1.6.9</version>
+                <artifactId>cargo-maven3-plugin</artifactId>
+                <!-- <version>1.6.9</version> -->
                 <configuration>
                     <container>
-                        <containerId>tomcat8x</containerId>
-                        <home>/usr/local/apache-tomcat-8.5.82/</home>
+                        <containerId>tomcat9x</containerId>
+                        <!-- <home>/usr/local/apache-tomcat-8.5.82/</home> -->
+                        <type>remote</type>
                     </container>
                     <configuration>
-                        <type>existing</type>
-                        <home>/usr/local/apache-tomcat-8.5.82/</home>
+                        <type>runtime</type>
+                        <properties>
+                            <cargo.server.settings>tomcat-server</cargo.server.settings>
+                        </properties>
                     </configuration>
                 </configuration>
             </plugin>
