@@ -53,11 +53,7 @@
           <version>1.4.1</version>
         </dependency>
         
-        <dependency>
-          <groupId>it.aon.WSInfocar</groupId>
-          <artifactId>WSInfocar</artifactId>
-          <version>1.2</version>
-        </dependency>
+        
         <dependency>
             <groupId>javax.xml.bind</groupId>
             <artifactId>jaxb-api</artifactId>
