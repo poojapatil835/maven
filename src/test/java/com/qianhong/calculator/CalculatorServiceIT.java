@@ -28,9 +28,7 @@ public class CalculatorServiceIT {
         CloseableHttpClient httpclient = HttpClients.createDefault();
         HttpGet httpGet = new HttpGet("http://localhost:9999/calculator/api/calculator/add?x=8&y=26");
         HttpResponse response = httpclient.execute(httpGet);
-        if (response.getStatusLine().getStatusCode() == 500) {
-            HttpResponse response = httpclient.execute(httpGet);
-        }    
+       
         assertEquals(200, response.getStatusLine().getStatusCode());
         assertThat(EntityUtils.toString(response.getEntity()), containsString("\"result\":34"));
     }
