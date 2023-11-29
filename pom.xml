@@ -189,49 +189,18 @@
 
              <plugin>
                 <groupId>org.codehaus.cargo</groupId>
-                <artifactId>cargo-maven3-plugin</artifactId>
-                
+                <artifactId>cargo-maven2-plugin</artifactId>
+                <version>1.6.9</version>
                 <configuration>
                     <container>
-                        <containerId>tomcat9x</containerId>
-                        <type>remote</type>
+                        <containerId>tomcat8x</containerId>
+                        <home>/usr/local/apache-tomcat-8.5.82/</home>
                     </container>
                     <configuration>
-                        <type>runtime</type>
-                        <properties>
-                            <cargo.remote.username>manager</cargo.remote.username>
-                            <cargo.remote.password>passowrd</cargo.remote.password>
-                            <cargo.tomcat.manager.url>http://65.0.18.24:8080/manager</cargo.tomcat.manager.url>
-                        </properties>
+                        <type>existing</type>
+                        <home>/usr/local/apache-tomcat-8.5.82/</home>
                     </configuration>
-                    <deployables>
-                        <deployable>
-                            <groupId>${project.groupId}</groupId>
-                            <artifactId>${project.artifactId}</artifactId>
-                            <type>${project.packaging}</type>
-                        </deployable>
-                    </deployables> 
                 </configuration>
-
-                 <executions>
-                  <!-- start server before integration tests -->
-                  <execution>
-                    <id>start-container</id>
-                    <phase>pre-integration-test</phase>
-                    <goals>
-                      <goal>deploy</goal>
-                    </goals>
-                  </execution>
-                  <!-- stop server after integration tests -->
-                  <execution>
-                    <id>stop-container</id>
-                    <phase>post-integration-test</phase>
-                    <goals>
-                      <goal>undeploy</goal>
-                    </goals>
-                  </execution>
-                </executions>
-
             </plugin>
 
             <plugin>
