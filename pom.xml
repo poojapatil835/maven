@@ -188,11 +188,11 @@
             </plugin>
             <plugin>
                 <groupId>org.codehaus.cargo</groupId>
-                <artifactId>cargo-maven3-plugin</artifactId>
+                <artifactId>cargo-maven2-plugin</artifactId>
                 <configuration>
                     <type>runtime</type>
                     <container>
-                        <containerId>tomcat9x</containerId>
+                        <containerId>tomcat8x</containerId>
                         <type>remote</type>
                     </container>
                     <configuration>
