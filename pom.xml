@@ -189,17 +189,17 @@
             <plugin>
                 <groupId>org.codehaus.cargo</groupId>
                 <artifactId>cargo-maven3-plugin</artifactId>
-                <!-- <version>1.6.9</version> -->
                 <configuration>
+                    <type>runtime</type>
                     <container>
                         <containerId>tomcat9x</containerId>
-                        <!-- <home>/usr/local/apache-tomcat-8.5.82/</home> -->
                         <type>remote</type>
                     </container>
                     <configuration>
-                        <type>runtime</type>
                         <properties>
-                            <cargo.server.settings>tomcat-server</cargo.server.settings>
+                            <cargo.remote.username>manager</cargo.remote.username>
+                            <cargo.remote.password>passowrd</cargo.remote.password>
+                            <cargo.tomcat.manager.url>http://65.0.18.24:8080/manager</cargo.tomcat.manager.url>
                         </properties>
                     </configuration>
                 </configuration>
