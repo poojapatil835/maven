@@ -189,11 +189,11 @@
 
              <plugin>
                 <groupId>org.codehaus.cargo</groupId>
-                <artifactId>cargo-maven2-plugin</artifactId>
-                <version>1.6.0</version>
+                <artifactId>cargo-maven3-plugin</artifactId>
+                
                 <configuration>
                     <container>
-                        <containerId>tomcat7x</containerId>
+                        <containerId>tomcat9x</containerId>
                         <type>remote</type>
                     </container>
                     <configuration>
@@ -210,9 +210,44 @@
                             <artifactId>${project.artifactId}</artifactId>
                             <type>${project.packaging}</type>
                         </deployable>
-                    </deployables>
+                    </deployables> 
+                </configuration>
+
+                 <executions>
+                  <!-- start server before integration tests -->
+                  <execution>
+                    <id>start-container</id>
+                    <phase>pre-integration-test</phase>
+                    <goals>
+                      <goal>deploy</goal>
+                    </goals>
+                  </execution>
+                  <!-- stop server after integration tests -->
+                  <execution>
+                    <id>stop-container</id>
+                    <phase>post-integration-test</phase>
+                    <goals>
+                      <goal>undeploy</goal>
+                    </goals>
+                  </execution>
+                </executions>
+
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.tomcat.maven</groupId>
+                <artifactId>tomcat7-maven-plugin</artifactId>
+                <version>2.2</version>
+                <configuration>
+                    <url>http://3.6.89.223:8080/manager/text</url>
+                    <server>tomcat</server>
+                    <username>manager</username>
+                    <password>password</password>
+                    <path>/calculator</path>
+                    <update>true</update>
                 </configuration>
             </plugin>
+
              <plugin>
                 <groupId>com.lazerycode.jmeter</groupId>
                 <artifactId>jmeter-maven-plugin</artifactId>
