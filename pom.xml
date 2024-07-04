@@ -232,10 +232,16 @@
                             <goal>jmeter</goal>
                         </goals>
                     </execution>
+                    <execution>
+                        <id>configuration</id>
+                        <goals>
+                            <goal>configure</goal>
+                        </goals>
+                    </execution>
                 </executions>
                  <configuration>
                     <!-- Other configurations -->
-                    <testFilesDirectory>_config.yml</testFilesDirectory>
+                    <testFilesDirectory>./src/test/jmeter</testFilesDirectory>
                 </configuration>
             </plugin>
             
