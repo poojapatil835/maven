@@ -212,13 +212,11 @@
                 <artifactId>tomcat7-maven-plugin</artifactId>
                 <version>2.2</version>
                 <configuration>
-                    <url>${tomcat.url}</url>
+                    <url>http://3.111.52.148:8080/manager/text</url>
                     <server>tomcat10</server>
-                    <username>${tomcat.username}</username>
-                    <password>${tomcat.password}</password>
-                    <path>${tomcat.path}</path>
+                    <path>/calci</path>
                     <timeout>60000</timeout>
-                    <update>true</update>
+                   
                 </configuration>
             </plugin>
 
