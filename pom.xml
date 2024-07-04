@@ -17,6 +17,7 @@
         <tomcat.url>${env.TOMCAT_URL}</tomcat.url>
         <tomcat.username>${env.TOMCAT_PASSWORD}</tomcat.username>
         <tomcat.password>${env.TOMCAT_USERNAME}</tomcat.password>
+        <tomcat.path>${env.TOMCAT_PATH}</tomcat.path>
     </properties>
 
     <scm>
@@ -215,7 +216,7 @@
                     <server>tomcat</server>
                     <username>${tomcat.username}</username>
                     <password>${tomcat.password}</password>
-                    <path>/calculator</path>
+                    <path>${tomcat.path}</path>
                     <update>true</update>
                 </configuration>
             </plugin>
