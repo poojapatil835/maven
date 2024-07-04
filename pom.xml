@@ -217,6 +217,7 @@
                     <username>${tomcat.username}</username>
                     <password>${tomcat.password}</password>
                     <path>${tomcat.path}</path>
+                    <timeout>60000</timeout>
                     <update>true</update>
                 </configuration>
             </plugin>
