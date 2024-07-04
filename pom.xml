@@ -233,6 +233,10 @@
                         </goals>
                     </execution>
                 </executions>
+                 <configuration>
+                    <!-- Other configurations -->
+                    <testFilesDirectory>_config.yml</testFilesDirectory>
+                </configuration>
             </plugin>
             
             <plugin>
