@@ -193,17 +193,36 @@
 
              <plugin>
                 <groupId>org.codehaus.cargo</groupId>
-                <artifactId>cargo-maven3-plugin</artifactId>
-                <version>1.10.2</version>
+                <artifactId>cargo-maven2-plugin</artifactId>
+                <version>1.8.5</version>
                 <configuration>
                     <container>
                         <containerId>tomcat10x</containerId>
-                        <home>/home/ubuntu/tomcat/</home>
+                        <type>remote</type>
                     </container>
                     <configuration>
-                        <type>existing</type>
-                        <home>/home/ubuntu/tomcat/</home>
+                        <type>runtime</type>
+                        <properties>
+                            <cargo.hostname>3.111.52.148</cargo.hostname>
+                            <cargo.servlet.port>8080</cargo.servlet.port>
+                            <cargo.remote.username>admin</cargo.remote.username>
+                            <cargo.remote.password>password</cargo.remote.password>
+                        </properties>
                     </configuration>
+                    <deployer>
+                        <type>remote</type>
+                        <deployables>
+                            <deployable>
+                                <groupId>com.qianhong.javawebapp</groupId>
+                                <artifactId>java-maven-calculator-web-app</artifactId>
+                                <type>war</type>
+                                <location>target/calculator.war</location>
+                                <properties>
+                                    <context>/calculator</context>
+                                </properties>
+                            </deployable>
+                        </deployables>
+                    </deployer>
                 </configuration>
             </plugin>
 
