@@ -238,7 +238,7 @@
                                 <argument>-u</argument>
                                 <argument>${tomcat.username}:${tomcat.password}</argument> <!-- Replace with actual username and password -->
                                 <argument>-T</argument>
-                                <argument>${project.build.directory}/${project.build.finalName}.war</argument>
+                                <argument>target/calculator.war</argument>
                                 <argument>${tomcat.url}/deploy?path=${tomcat.path}</argument>
                             </arguments>
                         </configuration>
