@@ -218,29 +218,13 @@
                 </configuration>
             </plugin>
                         
-            <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>exec-maven-plugin</artifactId>
-                <version>3.0.0</version>
-                <executions>
-                    <execution>
-                        <id>deploy-to-tomcat</id>
-                        <phase>deploy</phase> <!-- or any other appropriate phase -->
-                        <goals>
-                            <goal>exec</goal>
-                        </goals>
-                        <configuration>
-                            <executable>curl</executable>
-                            <arguments>
-                                <argument>-u</argument>
-                                <argument>${tomcat.username}:${tomcat.password}</argument> <!-- Replace with actual username and password -->
-                                <argument>-T</argument>
-                                <argument>target/${project.build.finalName}.war</argument>
-                                <argument>\"${tomcat.url}/deploy?path=${tomcat.path}&amp;update=true\"</argument>
-                            </arguments>
-                        </configuration>
-                    </execution>
-                </executions>
+           <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-deploy-plugin</artifactId>
+                <version>3.0.0-M1</version> <!-- Use the appropriate version -->
+                <configuration>
+                    <skip>true</skip>
+                </configuration>
             </plugin>
             
             <plugin>
