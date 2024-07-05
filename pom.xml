@@ -209,14 +209,7 @@
                  </configuration>
             </plugin>
 
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-deploy-plugin</artifactId>
-                <version>3.0.0-M1</version> <!-- Use the appropriate version -->
-                <configuration>
-                    <skip>true</skip>
-                </configuration>
-            </plugin>
+            
                         
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
@@ -225,7 +218,7 @@
                 <executions>
                     <execution>
                         <id>deploy-to-tomcat</id>
-                        <phase>install</phase> <!-- or any other appropriate phase -->
+                        <phase>deploy</phase> <!-- or any other appropriate phase -->
                         <goals>
                             <goal>exec</goal>
                         </goals>
@@ -234,9 +227,9 @@
                             <arguments>
                                 <argument>-u</argument>
                                 <argument>${tomcat.username}:${tomcat.password}</argument> <!-- Replace with actual username and password -->
-                                <argument>-T</argument>
+                                <argument>-v -T</argument>
                                 <argument>target/calculator.war</argument>
-                                <argument>${tomcat.url}/deploy?path=${tomcat.path}</argument>
+                                <argument>${tomcat.url}/deploy?path=${tomcat.path}&update=true</argument>
                             </arguments>
                         </configuration>
                     </execution>
