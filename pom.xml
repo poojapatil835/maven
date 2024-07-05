@@ -236,7 +236,7 @@
                                 <argument>${tomcat.username}:${tomcat.password}</argument> <!-- Replace with actual username and password -->
                                 <argument>-T</argument>
                                 <argument>${project.basedir}/target/${project.build.finalName}.war</argument>
-                                <argument>&quot;${tomcat.url}/deploy?path=${tomcat.path}&amp;update=true&quot;></argument>
+                                <argument>&quot;${tomcat.url}/deploy?path=${tomcat.path}&amp;update=true&quot;</argument>
                             </arguments>
                         </configuration>
                     </execution>
