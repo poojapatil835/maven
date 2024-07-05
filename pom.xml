@@ -198,7 +198,7 @@
                 <configuration>
                     <container>
                         <containerId>tomcat8x</containerId>
-                        <home>/usr/local/apache-tomcat-8.5.82/</home>
+                        <home>/home/ubuntu/tomcat/</home>
                     </container>
                     <configuration>
                         <type>existing</type>
