@@ -193,16 +193,16 @@
 
              <plugin>
                 <groupId>org.codehaus.cargo</groupId>
-                <artifactId>cargo-maven2-plugin</artifactId>
-                <version>1.6.9</version>
+                <artifactId>cargo-maven3-plugin</artifactId>
+                <version>1.10.2</version>
                 <configuration>
                     <container>
-                        <containerId>tomcat8x</containerId>
+                        <containerId>tomcat10x</containerId>
                         <home>/home/ubuntu/tomcat/</home>
                     </container>
                     <configuration>
                         <type>existing</type>
-                        <home>/usr/local/tomcat/</home>
+                        <home>/home/ubuntu/tomcat/</home>
                     </configuration>
                 </configuration>
             </plugin>
