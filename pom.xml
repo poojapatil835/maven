@@ -27,18 +27,6 @@
         <tag>HEAD</tag>
     </scm>
 
-    <distributionManagement>
-        <repository>
-            <id>releases</id>
-            <name>Nexus Release Repository</name>
-            <url>http://localhost:8081/repository/maven-releases/</url>
-        </repository>
-        <snapshotRepository>
-            <id>snapshots</id>
-            <name>Nexus Snapshot Repository</name>
-            <url>http://localhost:8081/repository/maven-snapshots/</url>
-        </snapshotRepository>
-    </distributionManagement>
 
     <dependencies>
         <dependency>
@@ -222,13 +210,22 @@
             </plugin>
 
             <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-deploy-plugin</artifactId>
+                <version>3.0.0-M1</version> <!-- Use the appropriate version -->
+                <configuration>
+                    <skip>true</skip>
+                </configuration>
+            </plugin>
+                        
+            <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>exec-maven-plugin</artifactId>
                 <version>3.0.0</version>
                 <executions>
                     <execution>
                         <id>deploy-to-tomcat</id>
-                        <phase>deploy</phase> <!-- or any other appropriate phase -->
+                        <phase>install</phase> <!-- or any other appropriate phase -->
                         <goals>
                             <goal>exec</goal>
                         </goals>
