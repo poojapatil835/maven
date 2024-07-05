@@ -202,7 +202,7 @@
                     </container>
                     <configuration>
                         <type>existing</type>
-                        <home>/usr/local/apache-tomcat-8.5.82/</home>
+                        <home>/usr/local/tomcat/</home>
                     </configuration>
                 </configuration>
             </plugin>
